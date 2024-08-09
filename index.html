@@ -1,0 +1,17 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Students</title>
+</head>
+<body>
+    <h1>Students</h1>
+    <ul>
+        {% for student in students %}
+            <li><a href="{{ url_for('student_detail', id=student.id) }}">{{ student.name }}</a></li>
+        {% endfor %}
+    </ul>
+    <a href="{{ url_for('add_student') }}">Add Student</a>
+</body>
+</html>

@@ -1,0 +1,20 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ student.name }}</title>
+</head>
+<body>
+    <h1>{{ student.name }}</h1>
+    <h2>Classes</h2>
+    <ul>
+        {% for class in student.classes %}
+            <li>{{ class.name }} at {{ class.time }} in {{ class.building }} (Floor {{ class.floor }}) 
+                <a href="{{ url_for('map_view', building=class.building) }}">Map</a></li>
+        {% endfor %}
+    </ul>
+    <a href="{{ url_for('add_class', student_id=student.id) }}">Add Class</a>
+    <a href="{{ url_for('index') }}">Back to Students</a>
+</body>
+</html>
